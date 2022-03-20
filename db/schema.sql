@@ -1,27 +1,31 @@
+/* === || CREATE DATABASE || === */
+DROP DATABASE IF EXISTS employeesDB;
+CREATE DATABASE employeesDB;
+USE employeesDB;
+
+
+/* === || CREATE DEPARTMENT || === */
 CREATE TABLE department (
-id INTEGER AUTO_INCREMENT PRIMARY KEY,
-name VARCHAR(30) NOT NULL,
-
+  id INT NOT NULL AUTO_INCREMENT,
+  name VARCHAR(45) NULL,
+  PRIMARY KEY (id)
 );
 
+/* === || CREATE ROLE || === */
 CREATE TABLE role (
-id INTEGER AUTO_INCREMENT PRIMARY KEY,
-title VARCHAR(30) NOT NULL,
-salary DECIMAL (10,2),
-department_id INTEGER,
-FOREIGN KEY (department_id) references department(id)
-
+  id INT NOT NULL AUTO_INCREMENT,
+  title VARCHAR(45) NULL,
+  salary DECIMAL(10.3) NULL,
+  department_id INT NULL,
+  PRIMARY KEY (id)
 );
 
+/* === || CREATE EMPLOYEE || === */
 CREATE TABLE employee (
-    id INTEGER AUTO_INCREMENT PRIMARY KEY,
-    first_name VARCHAR(30) NOT NULL,
-    last_name VARCHAR(30) NOT NULL,
-    role_id INTEGER,
-    FOREIGN KEY (role_id) references role(id),
-    manager_id INTEGER,
-    FOREIGN KEY (manager_id) references employee(id)
-
-
+  id INT NOT NULL AUTO_INCREMENT,
+  first_name VARCHAR(45) NULL,
+  last_name VARCHAR(45) NULL,
+  role_id INT NULL,
+  manager_id INT NULL,
+  PRIMARY KEY (id)
 );
-
