@@ -3,8 +3,9 @@ const table = require("console.table");
 const connection = require("./config/connection");
 const prompt = require("./config/prompts");
 require("console.table");
-firstPrompt();
+
 function firstPrompt() {
+
 	inquirer.prompt(prompt.firstPrompt).then(function ({ task }) {
 		switch (task) {
 			case "View Employees":
@@ -55,6 +56,7 @@ function firstPrompt() {
 		}
 	});
 }
+firstPrompt();
 function viewEmployee() {
 	console.log("Employee Rota:\n");
 
@@ -396,11 +398,7 @@ const updateEmployeeManager = () => {
 	);
 };
 
-// === ╔══════════════════╗ ===
-// === ║ REMOVE FUNCTIONS ║ ===
-// === ╚══════════════════╝ ===
-
-/* === || REMOVE EMPLOYEE || === */
+/* REMOVE EMPLOYEE  */
 function deleteEmployee() {
 	console.log("Deleting an employee");
 
@@ -431,7 +429,7 @@ function deleteEmployee() {
 	});
 }
 
-/* === || REMOVE DEPARTMENT || === */
+/* || REMOVE DEPARTMENT  */
 function deleteDepartment() {
 	console.log("\nRemove a Department:\n");
 
@@ -464,7 +462,7 @@ function deleteDepartment() {
 	});
 }
 
-/* === || REMOVE ROLE || === */
+/*  REMOVE ROLE */
 function deleteRole() {
 	console.log("Deleting a role");
 
